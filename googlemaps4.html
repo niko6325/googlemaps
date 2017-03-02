@@ -41,13 +41,16 @@
           position: myLatLng,
           map: map,
           title: 'TIVOLI!',
-        icon: src = "icon.jpg",
+            draggable: true,
+               animation: google.maps.Animation.DROP
+        //icon: src = "icon.jpg",
         });
 
            var marker2 = new google.maps.Marker({
           position: myLatLng2,
           map: map,
-          title: 'BAKKEN!'
+          title: 'BAKKEN!',
+
         });
 
             var marker3 = new google.maps.Marker({
@@ -61,6 +64,25 @@
           map: map,
           title: 'SOMMERLAND SJÆLLAND!'
         });
+
+
+
+          marker1.addListener('click', toggleBounce);
+            marker2.addListener('click', toggleBounce);
+            marker3.addListener('click', toggleBounce);
+            marker4.addListener('click', toggleBounce);
+
+
+            function toggleBounce() {
+                if (marker1.getAnimation() !== null) {
+                    marker1.setAnimation(null);
+                } else {
+                    marker1.setAnimation(google.maps.Animation.BOUNCE);
+                }
+            }
+
+
+
       }
     </script>
     <script async defer
