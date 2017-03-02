@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Simple markers</title>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+
+      function initMap() {
+        var myLatLng = {lat:  55.673872, lng: 12.568512};
+        var myLatLng2 = {lat:  55.775372, lng: 12.577718};
+        var myLatLng3 = {lat:  55.261064, lng: 11.863123};
+        var myLatLng4 = {lat:  55.896824, lng: 11.607252};
+
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 8,
+          center: myLatLng
+        });
+
+        var marker1 = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'TIVOLI!'
+        });
+
+           var marker2 = new google.maps.Marker({
+          position: myLatLng2,
+          map: map,
+          title: 'BAKKEN!'
+        });
+
+            var marker3 = new google.maps.Marker({
+          position: myLatLng3,
+          map: map,
+          title: 'BONBON-LAND!'
+        });
+
+           var marker4 = new google.maps.Marker({
+          position: myLatLng4,
+          map: map,
+          title: 'SOMMERLAND SJÆLLAND!'
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyByLdqnrwBuCg5_pRm9VDbnBvgXXZI-3U4&callback=initMap">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src="maps.js"></script>
+  </body>
+</html>
+
+
