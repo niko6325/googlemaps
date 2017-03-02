@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Simple Map</title>
+    <link rel="stylesheet" href="gruppe.css">
+
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+
+        #map {
+            height: 50%;
+            width: 50%;
+            margin-top: 25%;
+            margin-left: 25%;
+        }
+        /* Optional: Makes the sample page fill the window. */
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+    <script>
+        var map;
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: {
+                    lat: 55.706583,
+                    lng: 12.539141
+                },
+                zoom: 17
+            });
+        }
+
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyByLdqnrwBuCg5_pRm9VDbnBvgXXZI-3U4&callback=initMap" async defer></script>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src="maps.js"></script>
+</body>
+
+</html>
